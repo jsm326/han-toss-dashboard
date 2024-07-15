@@ -35,3 +35,5 @@ map_data = pd.DataFrame(
     np.random.randn(100, 2) / [50, 50] + [37.76, -122.4],
     columns=['lat', 'lon'])
 st.map(map_data)
+
+st.title('테스트중입니다')
