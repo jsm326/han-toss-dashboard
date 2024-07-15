@@ -37,3 +37,6 @@ map_data = pd.DataFrame(
 st.map(map_data)
 
 st.title('테스트중입니다.........')
+
+titanic = pd.read_csv("./data/titanic.csv")
+st.write(titanic)
