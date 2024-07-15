@@ -36,4 +36,4 @@ map_data = pd.DataFrame(
     columns=['lat', 'lon'])
 st.map(map_data)
 
-st.title('테스트중입니다')
+st.title('테스트중입니다.........')
