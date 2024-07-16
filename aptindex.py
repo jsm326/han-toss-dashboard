@@ -7,9 +7,11 @@ import streamlit as st
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 
 # 데이터 로드
-file_path = "C:/Users/user/Desktop/han-toss-dashboard/data/ecos.csv"
+file_path = "./data/ecos.csv"
+
 df = pd.read_csv(file_path)
 df['DATE'] = pd.to_datetime(df['DATE'])
+st.write(df)
 
 # Streamlit 앱 제목
 st.title('Ecos Economic Data Analysis')
