@@ -5,6 +5,7 @@ import seaborn as sns
 import statsmodels.api as sm
 import streamlit as st
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
+from PIL import Image
 
 # 데이터 로드
 file_path = "./data/ecos.csv"
