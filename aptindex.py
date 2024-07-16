@@ -11,7 +11,6 @@ file_path = "./data/ecos.csv"
 
 df = pd.read_csv(file_path)
 df['DATE'] = pd.to_datetime(df['DATE'])
-st.write(df)
 
 # Streamlit 앱 제목
 st.title('Ecos Economic Data Analysis')
