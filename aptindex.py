@@ -119,5 +119,7 @@ ax_acf[0].set_title('ACF of Residuals')
 ax_acf[1].set_title('PACF of Residuals')
 st.pyplot(fig_acf)
 
+st.title('꼬지모')
+st.title('https://jangkimo.tistory.com/')
 img = Image.open('data/gg.png')
 st.image(img)
