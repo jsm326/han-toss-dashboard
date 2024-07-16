@@ -118,3 +118,6 @@ plot_pacf(model.resid, lags=30, ax=ax_acf[1])
 ax_acf[0].set_title('ACF of Residuals')
 ax_acf[1].set_title('PACF of Residuals')
 st.pyplot(fig_acf)
+
+img = Image.open('data/gg.png')
+st.image(img)
