@@ -36,7 +36,7 @@ def run_ml_app():
         
 
         #모델 불러오기
-        MODEL_PATH=r'C:\Users\user\Desktop\mid_project_streamlit\modeling\hitter_model.pkl'
+        MODEL_PATH=r'./modeling/hitter_model.pkl'
         from pitcher_modeling_python import xgb_c_model
 
 
