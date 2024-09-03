@@ -130,7 +130,7 @@ st.image(img)
 
 st.title('세바오')
 sebao1 = Image.open('data/sebao1.jpg')
-sebao2 = Image.open('data/sebao1.jpg')
+sebao2 = Image.open('data/sebao2.jpg')
 st.image(sebao1)
 st.image(sebao2)
 
