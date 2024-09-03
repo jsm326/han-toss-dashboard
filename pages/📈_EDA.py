@@ -6,8 +6,8 @@ import matplotlib.font_manager as fm
 import folium
 import streamlit as st
 
-data_csv=r'C:\Users\user\Desktop\mid_project_streamlit\data\Salary_WAR_data.csv'
-career_csv=r'C:\Users\user\Desktop\mid_project_streamlit\data\total_career_data.csv'
+data_csv='./data/Salary_WAR_data.csv'
+career_csv= './data\total_career_data.csv'
 st.set_page_config(layout='wide')
 col1,col2=st.columns([1.0,1.0])
 col1,col2=st.columns(2)

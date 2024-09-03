@@ -55,7 +55,7 @@ def run_ml_app():
         st.subheader('⚾예측값 확인하기!')
 
         #모델 불러오기
-        MODEL_PATH=r'C:\Users\user\Desktop\mid_project_streamlit\modeling\pitcher_model.pkl'
+        MODEL_PATH='./modeling/pitcher_model.pkl'
         model=joblib.load(open(os.path.join(MODEL_PATH),'rb'))
 
         

@@ -64,7 +64,7 @@ class xgb_c_model():
 import pandas as pd
 import pickle as pkl
 
-data = pd.read_csv(r'C:\Users\user\Desktop\mid_project_streamlit\data\pitcher_data.csv')
+data = pd.read_csv('./data/pitcher_data.csv')
 df_input = data[['ERA', 'QS_G', 'SO', 'WAR_x', 'W', 'IP', 'K_BB', 'exp_QS','SO_G', 'QS', 'NP', 'RA_9', '연차', 'TBF', '현재연봉', 'WHIP', 'K-BB', 'NP/IP']]
 df_target = data['salary_cluster']
 
