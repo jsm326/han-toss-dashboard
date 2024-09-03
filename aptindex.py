@@ -86,6 +86,8 @@ y = df['aptpriceindex']
 X = sm.add_constant(X)
 model = sm.OLS(y, X).fit()
 
+
+
 st.title('회귀 분석 결과 표')
 st.write("## Regression Analysis Summary")
 st.write(model.summary().tables[1].as_html(), unsafe_allow_html=True)
@@ -125,6 +127,12 @@ st.title('꼬지모')
 st.title('https://jangkimo.tistory.com/')
 img = Image.open('data/gg.png')
 st.image(img)
+
+st.title('세바오')
+sebao1 = Image.open('data/sebao1.jpg')
+sebao2 = Image.open('data/sebao1.jpg')
+st.image(sebao1)
+st.image(sebao2)
 
 # 첫 번째 서브플롯
 fig_1, ax_1 = plt.subplots(figsize=(10, 6))
@@ -189,3 +197,4 @@ ax_6.set_title('All Indicators Over Time')
 ax_6.set_yscale('log')
 ax_6.legend()
 st.pyplot(fig_6)
+
