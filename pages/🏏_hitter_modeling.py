@@ -37,7 +37,7 @@ def run_ml_app():
 
         #모델 불러오기
         MODEL_PATH=r'./modeling/hitter_model.pkl'
-        from pitcher_modeling_python import xgb_c_model
+        from pages.pitcher_modeling_python import xgb_c_model
 
 
         model=joblib.load(open(os.path.join(MODEL_PATH),'rb'))

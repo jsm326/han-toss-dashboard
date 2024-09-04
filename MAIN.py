@@ -13,4 +13,21 @@ with st.chat_message("assistant"):
 """)
 
 
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 데이터 예시
+data = sns.load_dataset('diamonds')['price']
+
+# 경험적 누적 분포 함수 (ECDF) 플롯 생성
+fig, ax = plt.subplots()
+sns.ecdfplot(data, ax=ax)
+
+# 특정 값(상위 퍼센트)의 표시
+selected_value = data.quantile(0.95)  # 상위 5%에 해당하는 값
+ax.axvline(selected_value, color='red', linestyle='--', label='상위 5%')
+ax.legend()
+
+st.pyplot(fig)
+
 

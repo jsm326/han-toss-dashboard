@@ -18,7 +18,7 @@ import matplotlib.font_manager as fm
 
 warnings.filterwarnings('ignore')
 hitter_data = './data/hitter_salary_debut.csv'
-parkfactor = './data\pitcher_meanERA_parkfactor.csv'
+parkfactor = './data/pitcher_meanERA_parkfactor.csv'
 
 df_hitter=pd.read_csv(hitter_data)
 
