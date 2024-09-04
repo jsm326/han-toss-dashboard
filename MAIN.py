@@ -16,18 +16,36 @@ with st.chat_message("assistant"):
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# 데이터 예시
+# 데이터 생성
 data = sns.load_dataset('diamonds')['price']
 
-# 경험적 누적 분포 함수 (ECDF) 플롯 생성
-fig, ax = plt.subplots()
-sns.ecdfplot(data, ax=ax)
+# 상위 25%에 해당하는 값을 계산
+quantile_75 = data.quantile(0.75)
 
-# 특정 값(상위 퍼센트)의 표시
-selected_value = data.quantile(0.95)  # 상위 5%에 해당하는 값
-ax.axvline(selected_value, color='red', linestyle='--', label='상위 5%')
+# ECDF 플롯 생성
+fig, ax = plt.subplots()
+
+# 전체 구간을 시각화
+sns.ecdfplot(data, ax=ax, label='ECDF', color='blue')
+
+# 상위 25% 구간에 해당하는 데이터 필터링
+high_data = data[data >= quantile_75]
+
+# 상위 25% 구간을 따로 시각화 (다른 색상)
+sns.ecdfplot(high_data, ax=ax, color='red')
+
+# 상위 25% 라인 표시
+ax.axvline(quantile_75, color='green', linestyle='--', label='상위 25% 시작점')
+
+# 범례 추가
 ax.legend()
 
+# 제목 및 축 레이블 설정
+ax.set_title('ECDF with Top 25% Highlighted')
+ax.set_xlabel('Price')
+ax.set_ylabel('Cumulative Probability')
+
+# Streamlit에서 그래프 출력
 st.pyplot(fig)
 
 
