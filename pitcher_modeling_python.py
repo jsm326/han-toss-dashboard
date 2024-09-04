@@ -39,7 +39,7 @@ class xgb_c_model():
     def train(self, parameter, num, early):
         import xgboost as xgb
         dtrain, dtest = self.data_transform()
-        model = xgb.train(params = parameter, dtrain = dtrain, num_boost_round = num, early_stopping_rounds = early, evals = [(dtrain, 'train'), (dtest, 'eval')])
+        model = xgb.train(params = parameter, dtrain = dtrain, num_boost_round = 1000, early_stopping_rounds = 10, evals = [(dtrain, 'train'), (dtest, 'eval')])
         return model
     
     def model_test(self, model, test_dmatrix):
