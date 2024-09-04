@@ -34,29 +34,30 @@ def run_ml_app():
 
         st.subheader("⚾ 예측값 확인하기!")
         
-
-        #모델 불러오기
+        # 모델 불러오기
         MODEL_PATH = './modeling/hitter_model.pkl'
-        #from pitcher_modeling_python import xgb_c_model
-
-
-        model=joblib.load(open(os.path.join(MODEL_PATH),'rb'))
-        new_df=np.array(sample).reshape(1,-1)
-        #예측값 출력 탭
-        prediction=model.predict(new_df)
-        st.write(prediction)
-
-        if prediction==0:
-            st.success("연봉이 4500만원 미만입니다.")
+        model = joblib.load(open(os.path.join(MODEL_PATH), 'rb'))
         
-        elif prediction==1:
-            st.success("연봉이 4500만원 이상 9000만원 미만입니다.")
-
-        elif prediction==2:
-            st.success("연봉이 9000만원 이상 3억 미만입니다.")
+        # 데이터 변환
+        new_df = np.array(sample).reshape(1, -1)
         
+        # 예측값 출력 탭
+        prediction = model.predict(new_df)[0]  # 예측 결과는 배열이므로 첫 번째 값을 가져옵니다.
+
+        # 예측 결과에 따른 라벨 설정
+        if prediction == 0:
+            label = "연봉이 4500만원 미만입니다."
+        elif prediction == 1:
+            label = "연봉이 4500만원 이상 9000만원 미만입니다."
+        elif prediction == 2:
+            label = "연봉이 9000만원 이상 3억 미만입니다."
         else:
-            st.success("연봉이 3억 이상입니다.")
+            label = "연봉이 3억 이상입니다."
+        
         # 'value' 부분을 다른 텍스트로 변경
         st.metric(label="예측된 연봉 구간", value=label)
+
+        # 기존 텍스트도 계속 표시하고 싶다면:
+        # st.write(label)
+
 run_ml_app()
