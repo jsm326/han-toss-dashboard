@@ -57,5 +57,6 @@ def run_ml_app():
         
         else:
             st.success("연봉이 3억 이상입니다.")
-    
+        # 'value' 부분을 다른 텍스트로 변경
+        st.metric(label="예측된 연봉 구간", value=label)
 run_ml_app()
